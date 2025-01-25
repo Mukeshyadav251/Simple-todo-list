@@ -1,0 +1,91 @@
+body{
+    background-color: #000a1f;
+    padding:20px;
+    margin:0;
+}
+h1{
+    color:white;
+}
+.container {
+    max-width: 500px;
+    height: 400px;
+    margin: 100px;
+    left:450px;
+    right:0;
+    background:#141515;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(237, 231, 231, 0.1);
+    position: relative;
+   
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    animation: borderAnimation 5s infinite;
+    pointer-events: none; /* Prevents interaction with the pseudo-element */
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color:rgba(255, 0, 0, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        border-color: rgba(28, 175, 28, 0.5);
+        transform: scale(1);
+    }
+    100% {
+        border-color: rgba(255, 0, 0, 0.5);
+        transform: scale(1);
+    }
+}
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 100px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+button {
+    margin-top:10px;
+    padding: 10px;
+    cursor:pointer;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    color:white;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+li button.edit {
+    background: blue;
+}
